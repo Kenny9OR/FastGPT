@@ -19,12 +19,12 @@ const list = [
     icon: 'develop',
     label: '开发',
     link: '/openapi'
-  },
-  {
-    icon: 'git',
-    label: 'Git项目地址',
-    link: 'https://github.com/c121914yu/FastGPT'
   }
+  // {
+  //   icon: 'git',
+  //   label: 'Git项目地址',
+  //   link: 'https://github.com/c121914yu/FastGPT'
+  // }
 ];
 
 const Tools = () => {

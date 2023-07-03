@@ -132,15 +132,15 @@ const Navbar = ({ unread }: { unread: number }) => {
         </Box>
       )}
       <Box>
-        <Link
-          as={NextLink}
-          href="https://github.com/c121914yu/FastGPT"
-          target={'_blank'}
-          {...itemStyles}
-          color={'#9096a5'}
-        >
-          <MyIcon name={'git'} width={'22px'} height={'22px'} />
-        </Link>
+        {/*<Link*/}
+        {/*  as={NextLink}*/}
+        {/*  href="https://github.com/c121914yu/FastGPT"*/}
+        {/*  target={'_blank'}*/}
+        {/*  {...itemStyles}*/}
+        {/*  color={'#9096a5'}*/}
+        {/*>*/}
+        {/*  <MyIcon name={'git'} width={'22px'} height={'22px'} />*/}
+        {/*</Link>*/}
       </Box>
     </Flex>
   );

@@ -35,6 +35,10 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'user'
   },
+  expireDate: {
+    type: Date,
+    default: () => new Date()
+  },
   promotion: {
     rate: {
       // 返现比例

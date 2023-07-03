@@ -63,7 +63,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       {
         $project: {
           _id: 1,
-          avatar: { $ifNull: ['$avatar', '/icon/logo.png'] },
+          avatar: { $ifNull: ['$avatar', '/icon/WechatIMG1833.png'] },
           name: 1,
           userId: 1,
           share: 1,

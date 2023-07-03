@@ -20,6 +20,7 @@ export interface UserModelSchema {
   promotionAmount: number;
   openaiKey: string;
   createTime: number;
+  expireDate: number;
   promotion: {
     rate: number;
   };

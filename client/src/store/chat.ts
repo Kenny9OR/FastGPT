@@ -49,7 +49,7 @@ const defaultChatData = {
   modelId: 'modelId',
   model: {
     name: '',
-    avatar: '/icon/logo.png',
+    avatar: '/icon/WechatIMG1833.png',
     intro: '',
     canUse: false
   },
@@ -61,7 +61,7 @@ const defaultShareChatData: ShareChatType = {
   userAvatar: HUMAN_ICON,
   model: {
     name: '',
-    avatar: '/icon/logo.png',
+    avatar: '/icon/WechatIMG1833.png',
     intro: ''
   },
   chatModel: OpenAiChatEnum.GPT3516k,

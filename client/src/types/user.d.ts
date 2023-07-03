@@ -8,12 +8,14 @@ export interface UserType {
   promotion: {
     rate: number;
   };
+  expireDate: Date;
 }
 
 export interface UserUpdateParams {
   balance?: number;
   avatar?: string;
   openaiKey?: string;
+  expireDate?: Date;
 }
 
 export interface UserBillType {

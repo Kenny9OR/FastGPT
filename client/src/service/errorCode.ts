@@ -39,7 +39,8 @@ export enum ERROR_ENUM {
   unAuthorization = 'unAuthorization',
   insufficientQuota = 'insufficientQuota',
   unAuthModel = 'unAuthModel',
-  unAuthKb = 'unAuthKb'
+  unAuthKb = 'unAuthKb',
+  isExpirse = 'isExpirse'
 }
 export const ERROR_RESPONSE: Record<
   any,
@@ -72,6 +73,12 @@ export const ERROR_RESPONSE: Record<
     code: 512,
     statusText: ERROR_ENUM.unAuthKb,
     message: '无权使用该知识库',
+    data: null
+  },
+  [ERROR_ENUM.isExpirse]: {
+    code: 513,
+    statusText: ERROR_ENUM.isExpirse,
+    message: '账号使用时间已过期, 请前往 [账号] 页面续费!',
     data: null
   }
 };

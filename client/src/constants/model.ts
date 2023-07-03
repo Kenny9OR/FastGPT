@@ -138,7 +138,7 @@ export const defaultModel: ModelSchema = {
   _id: 'modelId',
   userId: 'userId',
   name: '模型名称',
-  avatar: '/icon/logo.png',
+  avatar: '/icon/WechatIMG1833.png',
   status: ModelStatusEnum.pending,
   updateTime: Date.now(),
   chat: {
