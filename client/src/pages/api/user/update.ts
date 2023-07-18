@@ -9,7 +9,7 @@ import { UserUpdateParams } from '@/types/user';
 /* 更新一些基本信息 */
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {
-    const { openaiKey, avatar } = req.body as UserUpdateParams;
+    const { openaiKey, avatar, expireDate } = req.body as UserUpdateParams;
 
     const { userId } = await authUser({ req, authToken: true });
 
@@ -21,7 +21,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       },
       {
         ...(avatar && { avatar }),
-        ...(openaiKey !== undefined && { openaiKey })
+        ...(openaiKey !== undefined && { openaiKey }),
+        ...(expireDate !== undefined && { expireDate })
       }
     );
 

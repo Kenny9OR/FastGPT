@@ -150,6 +150,7 @@ export const authUser = async ({
     }
 
     if (!user.openaiKey && formatPrice(user.balance) <= 0) {
+      return Promise.reject(ERROR_ENUM.unAuthorization);
       return Promise.reject(ERROR_ENUM.insufficientQuota);
     }
   }
@@ -215,6 +216,11 @@ export const getApiKey = async ({
   // 平台账号余额校验
   if (formatPrice(user.balance) <= 0) {
     return Promise.reject(ERROR_ENUM.insufficientQuota);
+  }
+
+  const storedDate = new Date(user.expireDate);
+  if (storedDate < new Date()) {
+    return Promise.reject(ERROR_ENUM.isExpirse);
   }
 
   return {

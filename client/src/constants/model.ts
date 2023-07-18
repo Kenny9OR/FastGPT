@@ -31,7 +31,7 @@ export const ChatModelMap = {
     contextMaxToken: 4000,
     systemMaxToken: 2400,
     maxTemperature: 1.2,
-    price: 1.5
+    price: 2.2
   },
   [OpenAiChatEnum.GPT3516k]: {
     chatModel: OpenAiChatEnum.GPT3516k,
@@ -39,7 +39,7 @@ export const ChatModelMap = {
     contextMaxToken: 16000,
     systemMaxToken: 8000,
     maxTemperature: 1.2,
-    price: 1.5
+    price: 2.5
   },
   [OpenAiChatEnum.GPT4]: {
     chatModel: OpenAiChatEnum.GPT4,
@@ -47,7 +47,7 @@ export const ChatModelMap = {
     contextMaxToken: 8000,
     systemMaxToken: 4000,
     maxTemperature: 1.2,
-    price: 45
+    price: 50
   },
   [OpenAiChatEnum.GPT432k]: {
     chatModel: OpenAiChatEnum.GPT432k,
@@ -73,8 +73,8 @@ export const defaultModel: ModelSchema = {
   _id: 'modelId',
   userId: 'userId',
   name: '模型名称',
-  avatar: '/icon/logo.png',
   intro: '',
+  avatar: '/icon/WechatIMG1833.png',
   updateTime: Date.now(),
   chat: {
     relatedKbs: [],
