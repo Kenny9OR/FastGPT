@@ -278,7 +278,7 @@ const Settings = ({ modelId }: { modelId: string }) => {
       </Flex>
       <Flex alignItems={'center'} mt={12} mb={10}>
         <Box w={['60px', '100px', '140px']} flexShrink={0}>
-          回复上限
+          单次回复上限(单位: tokens)
         </Box>
         <Box flex={1} ml={'10px'}>
           <MySlider
