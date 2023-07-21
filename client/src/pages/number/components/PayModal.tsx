@@ -212,17 +212,17 @@ const PayModal = ({ onClose }: { onClose: () => void }) => {
                     </Button>
                   ))}
                 </Grid>
-                <Grid gridTemplateColumns={'repeat(4,1fr)'} gridGap={5} mb={4}>
-                  {['一个月', '三个月', '半年', '一年'].map((item) => (
-                    <Button
-                      key={item}
-                      variant={item === inputVal ? 'solid' : 'outline'}
-                      onClick={() => setInputMonth(item)}
-                    >
-                      {item}
-                    </Button>
-                  ))}
-                </Grid>
+                {/*<Grid gridTemplateColumns={'repeat(4,1fr)'} gridGap={5} mb={4}>*/}
+                {/*  {['一个月', '三个月', '半年', '一年'].map((item) => (*/}
+                {/*    <Button*/}
+                {/*      key={item}*/}
+                {/*      variant={item === inputVal ? 'solid' : 'outline'}*/}
+                {/*      onClick={() => setInputMonth(item)}*/}
+                {/*    >*/}
+                {/*      {item}*/}
+                {/*    </Button>*/}
+                {/*  ))}*/}
+                {/*</Grid>*/}
                 <Box mb={4}>
                   <Input
                     value={inputVal}
@@ -233,24 +233,24 @@ const PayModal = ({ onClose }: { onClose: () => void }) => {
                       setInputVal(Math.floor(+e.target.value));
                     }}
                   ></Input>
-                  <Input
-                    value={inputMonth}
-                    type={'string'}
-                    step={1}
-                    placeholder={'月份'}
-                    onChange={(e) => {
-                      setInputMonth(e.target.value);
-                    }}
-                  ></Input>
+                  {/*<Input*/}
+                  {/*  value={inputMonth}*/}
+                  {/*  type={'string'}*/}
+                  {/*  step={1}*/}
+                  {/*  placeholder={'月份'}*/}
+                  {/*  onChange={(e) => {*/}
+                  {/*    setInputMonth(e.target.value);*/}
+                  {/*  }}*/}
+                  {/*></Input>*/}
                 </Box>
                 <Markdown
                   source={`
 | 计费项 | 价格: 元/ 1K tokens(包含上下文)|
 | --- | --- |
 | 知识库 - 索引 | 0.001 |
-| chatgpt - 对话 | 0.015 |
-| chatgpt16K - 对话 | 0.015 |
-| gpt4 - 对话 | 0.45 |
+| chatgpt - 对话 | 0.02 |
+| chatgpt16K - 对话 | 0.02 |
+| gpt4 - 对话 | 0.5 |
 | 文件拆分 | 0.015 |`}
                 />
               </>

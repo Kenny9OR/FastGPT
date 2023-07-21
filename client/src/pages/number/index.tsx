@@ -189,9 +189,12 @@ const NumberSetting = ({ tableType }: { tableType: `${TableEnum}` }) => {
               <Box>
                 <strong>{userInfo?.balance}</strong> 元
               </Box>
-              <Button size={['xs', 'sm']} w={['70px', '80px']} ml={5} onClick={onOpenPayModal}>
-                充值
-              </Button>
+              <Box fontSize={'xs'} color={'blackAlpha.500'}>
+                线上充值功能正在开发中...
+              </Box>
+              {/*<Button size={['xs', 'sm']} w={['70px', '80px']} ml={5} onClick={onOpenPayModal}>*/}
+              {/*  充值*/}
+              {/*</Button>*/}
             </Flex>
             <Box fontSize={'xs'} color={'blackAlpha.500'}>
               如果填写了自己的 openai 账号，网页上 openai 模型对话不会计费。

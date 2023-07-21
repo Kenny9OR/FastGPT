@@ -218,10 +218,10 @@ export const getApiKey = async ({
     return Promise.reject(ERROR_ENUM.insufficientQuota);
   }
 
-  const storedDate = new Date(user.expireDate);
-  if (storedDate < new Date()) {
-    return Promise.reject(ERROR_ENUM.isExpirse);
-  }
+  // const storedDate = new Date(user.expireDate);
+  // if (storedDate < new Date()) {
+  //   return Promise.reject(ERROR_ENUM.isExpirse);
+  // }
 
   return {
     userOpenAiKey: '',
