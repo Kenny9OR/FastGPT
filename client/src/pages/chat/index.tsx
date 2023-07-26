@@ -25,7 +25,8 @@ import {
   Card,
   Tooltip,
   useOutsideClick,
-  useTheme
+  useTheme,
+  IconButton
 } from '@chakra-ui/react';
 import { useToast } from '@/hooks/useToast';
 import { useGlobalStore } from '@/store/global';
@@ -60,6 +61,7 @@ const History = dynamic(() => import('./components/History'), {
 
 import styles from './index.module.scss';
 import { adaptChatItem_openAI } from '@/utils/plugin/openai';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 
 const textareaMinH = '22px';
 
@@ -447,7 +449,7 @@ const Chat = () => {
   // onclick chat message context
   const onclickContextMenu = useCallback(
     (e: MouseEvent<HTMLDivElement>, message: ChatSiteItemType) => {
-      e.preventDefault(); // 阻止默认右键菜单
+      // e.preventDefault(); // 阻止默认右键菜单
 
       // select all text
       const range = document.createRange();
@@ -463,6 +465,32 @@ const Chat = () => {
 
       setMessageContextMenuData({
         left: e.clientX - 20,
+        top: e.clientY,
+        message
+      });
+
+      return false;
+    },
+    [isPc]
+  );
+
+  // onclick chat message context
+  const onclickContextButton = useCallback(
+    (e: MouseEvent, message: ChatSiteItemType) => {
+      // select all text
+      // const range = document.createRange();
+      // range.selectNodeContents(e.currentTarget as HTMLDivElement);
+      // window.getSelection()?.removeAllRanges();
+      // window.getSelection()?.addRange(range);
+
+      navigator.vibrate?.(50); // 震动 50 毫秒
+
+      if (!isPc) {
+        PhoneContextShow.current = true;
+      }
+
+      setMessageContextMenuData({
+        left: e.clientX,
         top: e.clientY,
         message
       });
@@ -605,6 +633,7 @@ const Chat = () => {
     ]
   );
 
+  // @ts-ignore
   return (
     <Flex
       h={'100%'}
@@ -749,6 +778,15 @@ const Chat = () => {
                             source={item.value}
                             isChatting={isChatting && index === chatData.history.length - 1}
                           />
+                          <IconButton
+                            variant="outline"
+                            icon={<ChevronDownIcon />}
+                            aria-label={'right'}
+                            size={'sm'}
+                            w={'18px'}
+                            h={'18px'}
+                            onClick={(e) => onclickContextButton(e, item)}
+                          />
                           <Flex>
                             {!!item.systemPrompt && (
                               <Button
@@ -792,6 +830,15 @@ const Chat = () => {
                           onContextMenu={(e) => onclickContextMenu(e, item)}
                         >
                           <Box as={'p'}>{item.value}</Box>
+                          <IconButton
+                            variant="outline"
+                            icon={<ChevronDownIcon />}
+                            aria-label={'right'}
+                            size={'sm'}
+                            w={'18px'}
+                            h={'18px'}
+                            onClick={(e) => onclickContextButton(e, item)}
+                          />
                         </Card>
                       </Box>
                     )}
