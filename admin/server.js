@@ -4,6 +4,7 @@ import { useUserRoute } from './service/route/user.js';
 import { useAppRoute } from './service/route/app.js';
 import { useKbRoute } from './service/route/kb.js';
 import { useSystemRoute } from './service/route/system.js';
+import { useInformsRoute } from "./service/route/informs.js";
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,7 @@ useUserRoute(app);
 useAppRoute(app);
 useKbRoute(app);
 useSystemRoute(app);
+useInformsRoute(app);
 
 app.get('/*', (req, res) => {
   res.sendFile(new URL('dist/index.html', import.meta.url).pathname);

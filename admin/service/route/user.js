@@ -122,11 +122,12 @@ export const useUserRoute = (app) => {
     try {
       const _id = req.params.id;
 
-      let { password, balance = 0 } = req.body;
+      let { password, promotion, balance = 0 } = req.body;
 
       const result = await User.findByIdAndUpdate(_id, {
         ...(password && { password: hashPassword(hashPassword(password)) }),
-        ...(balance && { balance })
+        ...(balance && { balance }),
+        ...(promotion && { promotion })
       });
       res.json(result);
     } catch (err) {

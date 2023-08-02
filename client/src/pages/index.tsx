@@ -7,7 +7,6 @@ import { useGlobalStore } from '@/store/global';
 
 import styles from './index.module.scss';
 import axios from 'axios';
-import MyIcon from '@/components/Icon';
 
 const Home = () => {
   const router = useRouter();
@@ -229,7 +228,7 @@ const Home = () => {
             </Link>
           )}
 
-          <Box>Made by FastGpt Team.</Box>
+          <Box>Made by KKGpt Team.</Box>
         </Card>
       </Box>
     </Flex>

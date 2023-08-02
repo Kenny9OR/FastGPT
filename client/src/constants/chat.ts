@@ -22,5 +22,5 @@ export const ChatRoleMap = {
   }
 };
 
-export const HUMAN_ICON = `https://fastgpt.run/icon/human.png`;
-export const LOGO_ICON = `https://fastgpt.run/imgs/modelAvatar.png`;
+export const HUMAN_ICON = `http://kkgpt.co/icon/human.png`;
+export const LOGO_ICON = `http://kkgpt.co/imgs/modelAvatar.png`;

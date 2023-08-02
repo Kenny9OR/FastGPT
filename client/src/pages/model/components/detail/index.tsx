@@ -75,7 +75,7 @@ const ModelDetail = ({ modelId }: { modelId: string }) => {
             { label: '配置', id: TabEnum.settings },
             ...(isOwner ? [{ label: '知识库', id: TabEnum.kb }] : []),
             { label: '分享', id: TabEnum.share },
-            { label: 'API', id: TabEnum.API },
+            // { label: 'API', id: TabEnum.API },
             { label: '立即对话', id: 'startChat' }
           ]}
           size={isPc ? 'md' : 'sm'}

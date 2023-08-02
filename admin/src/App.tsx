@@ -9,9 +9,9 @@ import {
   HTTPClient
 } from 'tushan';
 import { authProvider } from './auth';
-import { userFields, payFields, kbFields, ModelFields, SystemFields } from './fields';
+import { userFields, payFields, kbFields, ModelFields, SystemFields, InformFields } from './fields';
 import { Dashboard } from './Dashboard';
-import { IconUser, IconApps, IconBook, IconStamp } from 'tushan/icon';
+import { IconUser, IconApps, IconBook, IconStamp, IconNotification } from 'tushan/icon';
 import { i18nZhTranslation } from 'tushan/client/i18n/resources/zh';
 
 const authStorageKey = 'tushan:auth';
@@ -46,7 +46,7 @@ function App() {
   return (
     <Tushan
       basename="/"
-      header={'FastGpt-Admin'}
+      header={'KK-AI-ADMIN'}
       i18n={i18n}
       dataProvider={dataProvider}
       authProvider={authProvider}
@@ -130,6 +130,23 @@ function App() {
           <ListTable
             fields={SystemFields}
             action={{ detail: true, edit: true, create: true, delete: true }}
+          />
+        }
+      />
+
+      <Resource
+        name="informs"
+        label="通知"
+        icon={<IconNotification />}
+        list={
+          <ListTable
+            filter={[
+              createTextField('title', {
+                label: '标题'
+              })
+            ]}
+            fields={InformFields}
+            action={{ detail: true, create: true }}
           />
         }
       />

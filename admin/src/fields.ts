@@ -2,10 +2,11 @@ import { createTextField, createNumberField } from 'tushan';
 
 export const userFields = [
   createTextField('id', { label: 'ID' }),
-  createTextField('username', { label: '用户名', edit: { hidden: true } }),
+  createTextField('username', { label: '用户名' }),
   createNumberField('balance', { label: '余额', list: { sort: true } }),
   createTextField('createTime', { label: 'Create Time', list: { sort: true } }),
-  createTextField('password', { label: '密码', list: { hidden: true } })
+  createTextField('password', { label: '密码', list: { hidden: true } }),
+  createTextField('promotion', { label: '返现比例参数' })
 ];
 
 export const payFields = [
@@ -49,4 +50,17 @@ export const SystemFields = [
   createTextField('qaMaxProcess', { label: 'qa最大进程' }),
   createTextField('pgIvfflatProbe', { label: 'pg 探针数量' }),
   createTextField('sensitiveCheck', { label: '敏感词校验(true,false)' })
+];
+
+export const InformFields = [
+  createTextField('userId', { label: '用户ID', create: { hidden: false }, edit: { hidden: true } }),
+  createTextField('time', {
+    label: '通知时间',
+    list: { sort: true },
+    create: { hidden: true },
+    edit: { hidden: true }
+  }),
+  createTextField('title', { label: '标题' }),
+  createTextField('content', { label: '内容' }),
+  createTextField('read', { label: '是否已读', create: { hidden: true } })
 ];

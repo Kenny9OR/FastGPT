@@ -104,8 +104,21 @@ const SystemSchema = new mongoose.Schema({
   }
 });
 
+const InformsSchema = new mongoose.Schema({
+  userId: mongoose.Schema.Types.ObjectId,
+  time: Date,
+  type: String,
+  title: String,
+  content: String,
+  read: {
+    type: Boolean,
+    default: false
+  }
+});
+
 export const Model = mongoose.models['model'] || mongoose.model('model', modelSchema);
 export const Kb = mongoose.models['kb'] || mongoose.model('kb', kbSchema);
 export const User = mongoose.models['user'] || mongoose.model('user', userSchema);
 export const Pay = mongoose.models['pay'] || mongoose.model('pay', paySchema);
 export const System = mongoose.models['system'] || mongoose.model('system', SystemSchema);
+export const Informs = mongoose.models['informs'] || mongoose.model('informs', InformsSchema);

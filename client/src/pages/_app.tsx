@@ -36,7 +36,7 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     loadInitData();
-  }, []);
+  }, [loadInitData]);
 
   return (
     <>
@@ -47,7 +47,7 @@ function App({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, viewport-fit=cover"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon/WechatIMG1833.png" />
       </Head>
       <Script src="/js/particles.js"></Script>
       <Script src="/js/qrcode.min.js" strategy="afterInteractive"></Script>
