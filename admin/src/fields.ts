@@ -6,7 +6,7 @@ export const userFields = [
   createNumberField('balance', { label: '余额', list: { sort: true } }),
   createTextField('createTime', { label: 'Create Time', list: { sort: true } }),
   createTextField('password', { label: '密码', list: { hidden: true } }),
-  createTextField('promotion', { label: '返现比例参数' })
+  createTextField('promotion.rate', { label: '返现比例' })
 ];
 
 export const payFields = [
