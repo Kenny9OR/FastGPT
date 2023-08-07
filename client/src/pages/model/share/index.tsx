@@ -23,7 +23,7 @@ const modelList = () => {
     pageNum
   } = usePagination<ShareModelItem>({
     api: getShareModelList,
-    pageSize: 24,
+    pageSize: 25,
     params: {
       searchText
     }
