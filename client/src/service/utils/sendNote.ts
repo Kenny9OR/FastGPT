@@ -23,7 +23,7 @@ const emailMap: { [key: string]: any } = {
     html: (code: string) => `<div>您正在注册 KKGPT 账号，验证码为：${code}</div>`
   },
   [UserAuthTypeEnum.findPassword]: {
-    subject: '修改 FastGPT 密码',
+    subject: '修改 KKGPT 密码',
     html: (code: string) => `<div>您正在修改 KKGPT 账号密码，验证码为：${code}</div>`
   }
 };
@@ -31,7 +31,7 @@ const emailMap: { [key: string]: any } = {
 export const sendEmailCode = (email: string, code: string, type: `${UserAuthTypeEnum}`) => {
   return new Promise((resolve, reject) => {
     const options = {
-      from: `"FastGPT" ${myEmail}`,
+      from: `"KKGPT" ${myEmail}`,
       to: email,
       subject: emailMap[type]?.subject,
       html: emailMap[type]?.html(code)

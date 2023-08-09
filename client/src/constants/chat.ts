@@ -23,4 +23,4 @@ export const ChatRoleMap = {
 };
 
 export const HUMAN_ICON = `http://kkgpt.co/icon/human.png`;
-export const LOGO_ICON = `http://kkgpt.co/imgs/modelAvatar.png`;
+export const LOGO_ICON = `http://kkgpt.co/icon/WechatIMG1833.png`;
