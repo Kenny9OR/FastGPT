@@ -49,6 +49,8 @@ function App({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/icon/WechatIMG1833.png" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-D0Y9R9SB75"></Script>
+      <Script src="/js/googleAnalytics.js"></Script>
       <Script src="/js/particles.js"></Script>
       <Script src="/js/qrcode.min.js" strategy="afterInteractive"></Script>
       <Script src="/js/pdf.js" strategy="afterInteractive"></Script>
