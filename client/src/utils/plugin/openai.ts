@@ -15,17 +15,17 @@ export const getOpenAiEncMap = () => {
     return global.OpenAiEncMap;
   }
   const enc = {
-    [OpenAiChatEnum.GPT35]: encoding_for_model('gpt-3.5-turbo', {
+    [OpenAiChatEnum.GPT35]: encoding_for_model('gpt-3.5-turbo-0125', {
       '<|im_start|>': 100264,
       '<|im_end|>': 100265,
       '<|im_sep|>': 100266
     }),
-    [OpenAiChatEnum.GPT3516k]: encoding_for_model('gpt-3.5-turbo', {
+    [OpenAiChatEnum.GPT3516k]: encoding_for_model('gpt-3.5-turbo-0125', {
       '<|im_start|>': 100264,
       '<|im_end|>': 100265,
       '<|im_sep|>': 100266
     }),
-    [OpenAiChatEnum.GPT4]: encoding_for_model('gpt-4', {
+    [OpenAiChatEnum.GPT4]: encoding_for_model('gpt-4-vision-preview', {
       '<|im_start|>': 100264,
       '<|im_end|>': 100265,
       '<|im_sep|>': 100266
@@ -73,7 +73,7 @@ export function countOpenAIToken({
   messages: ChatItemType[];
   model: `${OpenAiChatEnum}`;
 }) {
-  const diffVal = model.startsWith('gpt-3.5-turbo') ? 3 : 2;
+  const diffVal = model.startsWith('gpt-3.5-turbo-0125') ? 3 : 2;
 
   const adaptMessages = adaptChatItem_openAI({ messages, reserveId: true });
   const token = adaptMessages.reduce((sum, item) => {

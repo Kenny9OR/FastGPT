@@ -40,7 +40,7 @@ export async function openaiEmbedding({
   mustPay = false
 }: { userId: string; mustPay?: boolean } & Props) {
   const { userOpenAiKey, systemAuthKey } = await getApiKey({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-3.5-turbo-0125',
     userId,
     mustPay
   });

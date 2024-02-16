@@ -8,10 +8,8 @@ export type EmbeddingModelType = 'text-embedding-ada-002';
 
 export enum OpenAiChatEnum {
   'GPT35' = 'gpt-3.5-turbo-0125',
-  //  'GPT35' = 'gpt-3.5-turbo',
   'GPT3516k' = 'gpt-3.5-turbo-16k',
-  'GPT4' = 'gpt-4-turbo-preview',
-  //  'GPT4' = 'gpt-4',
+  'GPT4' = 'gpt-4-version-preview',
   'GPT432k' = 'gpt-4-32k'
 }
 
